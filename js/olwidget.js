@@ -212,6 +212,7 @@ olwidget.BaseMap = OpenLayers.Class(OpenLayers.Map, {
             defaultLon: 0,
             defaultLat: 0,
             defaultZoom: 4,
+            pointDefaultZoom: 4,
             zoomToDataExtent: true,
             overlayStyle: {
                 fillColor: '#ff00ff',
@@ -285,7 +286,7 @@ olwidget.BaseMap = OpenLayers.Class(OpenLayers.Map, {
                     this.vectorLayer.features[0].geometry.CLASS_NAME == "OpenLayers.Geometry.Point") {
 
                 this.setCenter(this.vectorLayer.features[0].geometry.getBounds().getCenterLonLat(), 
-                               this.opts.defaultZoom);
+                               this.opts.pointDefaultZoom);
             } else {
                 this.zoomToExtent(this.vectorLayer.getDataExtent());
             }
